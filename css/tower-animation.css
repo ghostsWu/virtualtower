@@ -1,0 +1,358 @@
+ul,
+li,
+ol {
+  list-style-type: none;
+}
+.tower-animation * {
+  box-sizing: content-box;
+}
+.tower-animation {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.tower-animation .tower-stage {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.tower-animation .tower-text {
+  font-family: 'ledfont';
+  font-size: 18px;
+  line-height: 1;
+  position: absolute;
+  z-index: 2;
+  top: 27%;
+  left: 50%;
+  width: 3em;
+  margin-left: -1.5em;
+  -webkit-transform: skew(0deg, -8deg);
+      -ms-transform: skew(0deg, -8deg);
+          transform: skew(0deg, -8deg);
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+}
+.tower-animation .tower-text span {
+  display: block;
+}
+.tower-background li {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: none;
+  display: block;
+  width: 100%;
+}
+.tower-background li:first-child {
+  position: relative;
+}
+.tower-background .tower-bg-lightup,
+.tower-background .tower-bg-startop,
+.tower-background .tower-bg-stardow {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.tower-background .tower-bg-lightup {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+  -webkit-transition-property: opacity;
+          transition-property: opacity;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.tower-background .tower-bg-startop,
+.tower-background .tower-bg-stardow {
+  -webkit-animation-name: tower-bg-star;
+          animation-name: tower-bg-star;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.tower-background .tower-bg-startop {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+.tower-background .tower-bg-stardow {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+@-webkit-keyframes tower-bg-star {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  90% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+}
+@keyframes tower-bg-star {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  90% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+}
+.tower-text {
+  overflow: hidden;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.tower-text .text-effect {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.tower-text .textlength {
+  opacity: 0;
+  filter: alpha(opacity=0);
+  color: transparent;
+}
+.tower-text p {
+  margin-top: .2em;
+  padding-bottom: 1em;
+}
+.tower-text .top,
+.tower-text .light {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  height: 50%;
+}
+.tower-text .top {
+  text-shadow: 0px 0px 3px #000000, 0.5px 0.5px 0px rgba(0, 0, 0, 0.9), 1px 1px 0px rgba(0, 0, 0, 0.2), 1.5px 1.5px 0 rgba(0, 0, 0, 0.2), 2px 2px 2px rgba(255, 23, 205, 0.5), 2.5px 2.5px 4px rgba(255, 23, 205, 0.5), 0px 0px 7px rgba(255, 23, 205, 0.5);
+}
+.tower-text .light {
+  color: transparent;
+  text-shadow: 0.5px 0.5px 14px rgba(255, 255, 255, 0.2), 1px 1px 14px rgba(255, 255, 255, 0.2), 1.5px 1.5px 14px rgba(255, 255, 255, 0.2), 2px 2px 14px rgba(255, 255, 255, 0.2), 2.5px 2.5px 12px rgba(255, 255, 255, 0.2), 3px 3px 10px rgba(255, 255, 255, 0.2), 3.5px 3.5px 8px rgba(255, 255, 255, 0.2), 4px 4px 6px rgba(255, 255, 255, 0.2), 4.5px 4.5px 4px rgba(255, 255, 255, 0.2), 5px 5px 2px rgba(255, 255, 255, 0.2), 5.5px 5.5px 1px rgba(255, 255, 255, 0.2);
+}
+.tower-text .light span {
+  position: relative;
+  top: -5.5px;
+  left: -5.5px;
+}
+.tower-text .light .text-body,
+.tower-text .top .text-body {
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+  -webkit-transition-timing-function: steps(40);
+          transition-timing-function: steps(40);
+  -webkit-transition-duration: 5s;
+          transition-duration: 5s;
+  -webkit-transition-property: -webkit-transform;
+          transition-property: transform;
+  -webkit-transform: translate(0px, 100%);
+      -ms-transform: translate(0px, 100%);
+          transform: translate(0px, 100%);
+  -webkit-animation-name: textscroll;
+          animation-name: textscroll;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-timing-function: steps(41);
+          animation-timing-function: steps(41);
+  -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+}
+@-webkit-keyframes textscroll {
+  0% {
+    -webkit-transform: translate(0px, 0%);
+            transform: translate(0px, 0%);
+  }
+  50% {
+    -webkit-transform: translate(0px, -100%);
+            transform: translate(0px, -100%);
+  }
+  100% {
+    -webkit-transform: translate(0px, -100%);
+            transform: translate(0px, -100%);
+  }
+}
+@keyframes textscroll {
+  0% {
+    -webkit-transform: translate(0px, 0%);
+            transform: translate(0px, 0%);
+  }
+  50% {
+    -webkit-transform: translate(0px, -100%);
+            transform: translate(0px, -100%);
+  }
+  100% {
+    -webkit-transform: translate(0px, -100%);
+            transform: translate(0px, -100%);
+  }
+}
+.tower-text .light .text-body span {
+  -webkit-animation-name: textlight;
+          animation-name: textlight;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  -webkit-animation-timing-function: step-start;
+          animation-timing-function: step-start;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.tower-text .light .text-body span:nth-last-child(3n-1) {
+  -webkit-animation-delay: .66666s;
+          animation-delay: .66666s;
+}
+.tower-text .light .text-body span:nth-last-child(3n+0) {
+  -webkit-animation-delay: .333333s;
+          animation-delay: .333333s;
+}
+.tower-text .light .text-body span:nth-last-child(3n+1) {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+@-webkit-keyframes textlight {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  66% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+}
+@keyframes textlight {
+  0% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  66% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  100% {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+}
+.butdiv {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  width: 100%;
+  height: 2em;
+}
+.butdiv button {
+  width: 20%;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #ccc;
+}
+.animationA .tower-bg-startop,
+.animationA .tower-bg-stardow {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.animationA .tower-bg-lightup {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.animation-typing .tower-bg-lightup {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.animationB .tower-bg-lightup {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.animationB .tower-text {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.animationB .light .text-body span {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.animationB .light .text-body,
+.animationB .top .text-body {
+  -webkit-transform: translate(0px, 0%);
+      -ms-transform: translate(0px, 0%);
+          transform: translate(0px, 0%);
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.animationC .tower-bg-startop,
+.animationC .tower-bg-stardow {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.animationC .tower-bg-lightup {
+  -webkit-transition-delay: 4s;
+          transition-delay: 4s;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.animationC .tower-text {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.animationC .light .text-body span {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+.animationC .light .text-body,
+.animationC .top .text-body {
+  -webkit-transform: translate(0px, 0%);
+      -ms-transform: translate(0px, 0%);
+          transform: translate(0px, 0%);
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}

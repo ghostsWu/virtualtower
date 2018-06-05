@@ -1,0 +1,1058 @@
+/* =====================================================
+ * ParisianMacau
+ * ===================================================*/
+html,
+body {
+  height: 100%;
+}
+p {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+@font-face {
+  font-family: 'ledfont';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/ledfont.woff2') format('woff2'), url('../fonts/ledfont.woff') format('woff');
+}
+svg {
+  color: #fff;
+}
+.icon {
+  display: inline-block;
+  width: 1.8em;
+  height: 1.8em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+.btn {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.42857143;
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 6px 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-image: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+.btn.focus,
+.btn:focus,
+.btn:hover {
+  text-decoration: none;
+  color: #333;
+}
+.btn.active,
+.btn:active {
+  outline: 0;
+  background-image: none;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.btn-default {
+  color: #333;
+  border-color: #ccc;
+  background-color: #fff;
+}
+.btn-default.focus,
+.btn-default:focus {
+  color: #333;
+  border-color: #8c8c8c;
+  background-color: #e6e6e6;
+}
+.btn-default:hover {
+  color: #333;
+  border-color: #adadad;
+  background-color: #e6e6e6;
+}
+.btn-primary {
+  color: #fff;
+  background: #e4008b;
+}
+.btn-link {
+  font-weight: 400;
+  color: #fff;
+  border-radius: 0;
+}
+.btn-link,
+.btn-link.active,
+.btn-link:active,
+.btn-link[disabled],
+fieldset[disabled] .btn-link {
+  background-color: transparent;
+  box-shadow: none;
+}
+.btn-link,
+.btn-link:active,
+.btn-link:focus,
+.btn-link:hover {
+  border-color: transparent;
+}
+.btn-link:focus,
+.btn-link:hover {
+  text-decoration: underline;
+  color: #aa9057;
+  background-color: transparent;
+}
+.btn-lg {
+  font-size: 18px;
+  line-height: 1.3333333;
+  padding: 10px 16px;
+  border-radius: 6px;
+}
+.btn-sm {
+  font-size: .7rem;
+  line-height: 1.5;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+.btn-xs {
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}
+/* =====================================================
+ * Swiper container
+ * ===================================================*/
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+}
+.parisian-container {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.parisian-tower {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.parisian-bg,
+.tower-bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-position: center;
+  background-size: 120%;
+}
+.bg-img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  opacity: 0;
+  background-position: top left;
+  background-size: cover;
+}
+.tower-img {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  transition: opacity 6s, transform 6s;
+  transform: scale(1.3);
+  opacity: 0;
+  background-position: top left;
+  background-size: cover;
+}
+#bg_img0 {
+  background-image: url('../images/pvtimg_nightsky.jpg');
+  background-repeat: no-repeat;
+}
+#bg_img1 {
+  background-image: url('../images/pvtimg_tower_bg.jpg');
+  background-repeat: no-repeat;
+}
+#bg_img3 {
+  background-image: url('../images/pvtimg_tower_bg_lightup.jpg');
+  background-repeat: no-repeat;
+}
+/* =====================================================
+ * Activity Header
+ * ===================================================*/
+.activity-header {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 60px;
+  color: #fff;
+}
+.user-info {
+  float: left;
+  width: 70%;
+  height: inherit;
+  padding-top: 5px;
+  padding-left: 5px;
+}
+.user-img img {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 5px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.user-img {
+  float: left;
+}
+.user-name {
+  padding-top: .3rem;
+}
+.user-info span {
+  font-size: .65rem;
+  line-height: 1rem;
+  display: inline-block;
+  float: left;
+  width: 70%;
+  text-align: left;
+}
+.term-egulation {
+  float: right;
+  width: 30%;
+  height: inherit;
+  padding-right: 5px;
+  text-align: right;
+}
+.term-egulation .btn-link {
+  margin-top: 1rem;
+}
+/* =====================================================
+ * Activity Countdown
+ * ===================================================*/
+.countdown-cont {
+  color: #aa9057;
+}
+.countdown-cont .title {
+  color: #fff;
+}
+.activity-theme {
+  font-size: .8rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.countdown-tips .tips-date {
+  /*font-size: 0.6rem;*/
+}
+.mygame {
+  position: relative;
+  clear: both;
+  width: 100%;
+  height: 100px;
+  padding: 0 3%;
+}
+.mygame .icon-mygame {
+  float: left;
+  width: 120px;
+  height: 100px;
+}
+/* =====================================================
+ * Activation Enter
+ * ===================================================*/
+.modal {
+  position: fixed;
+  z-index: 1050;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  overflow: hidden;
+  outline: 0;
+  -webkit-overflow-scrolling: touch;
+}
+.modal-dialog {
+  width: 90%;
+  margin: 35% auto;
+}
+.activation-body {
+  padding: .2rem;
+  border: 1px solid #aa9057;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.75);
+}
+.activation-title {
+  font-family: 'ledfont';
+  font-size: 1.8rem;
+  line-height: 2rem;
+  width: 100%;
+  height: 2rem;
+  margin: 5px 0;
+  text-align: center;
+}
+.activation-input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 2px 0;
+  border-top: 1px dashed #aa9057;
+  border-bottom: 1px dashed #aa9057;
+}
+.activation-input input {
+  font-family: 'ledfont';
+  font-size: 1rem;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 2.1rem;
+  text-align: center;
+  border: 0;
+  outline: 0;
+  background: none;
+}
+.modal-dialog .tips-text {
+  font-size: .6rem;
+  line-height: .8rem;
+  padding: 10px 0;
+  text-align: center;
+  color: #aa9057;
+}
+.activation-footer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 2rem;
+  padding: 8px;
+  text-align: center;
+}
+/* =====================================================
+ * Footer
+ * ===================================================*/
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 38px;
+}
+.footer-desc {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: inherit;
+  padding-left: 10px;
+  text-align: left;
+}
+.footer-desc .btn-text {
+  float: left;
+}
+.footer .share-tips {
+  bottom: 188px;
+}
+.activation .btn-link {
+  margin-left: -0.3rem;
+  padding: 0;
+}
+.activation svg {
+  display: block;
+  margin: 0 auto;
+}
+/* =====================================================
+ * Leaderboards
+ * ===================================================*/
+.winner-panel {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+.parisian-title {
+  position: relative;
+  width: 92%;
+  height: 60px;
+  margin: 0 4%;
+  border-bottom: 1px solid #fff;
+}
+.parisian-title h3 {
+  font-size: 1.2rem;
+  font-weight: 200;
+  line-height: 3rem;
+  margin: 0;
+  color: #aa9057;
+}
+.leaderboards-img {
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.item-title .rank {
+  font-size: .75rem;
+  display: inline-block;
+  width: 2rem;
+  text-align: center;
+}
+.item-title .time {
+  font-size: .75rem;
+  display: inline-block;
+  width: 3rem;
+  height: 2.2rem;
+  margin-right: .2rem;
+  text-align: right;
+  vertical-align: middle;
+}
+.item-title .time .data {
+  font-weight: 200;
+  font-style: normal;
+  display: inline-block;
+}
+.item-title .winner-img .img {
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.item-title .winner-name,
+.item-title .header-name {
+  overflow: hidden;
+  width: 4rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: normal;
+}
+.item-after .total {
+  color: #aa9057;
+}
+.item-after i {
+  font-style: normal;
+  display: inline-block;
+  margin-left: 2px;
+}
+.leaderboards-list .item-content:first-child .item-title .rank {
+  font-size: 1.2rem;
+  line-height: 2.4rem;
+  position: relative;
+}
+.leaderboards-list .item-content:first-child .item-title .rank::after {
+  font-size: .7rem;
+  position: absolute;
+  top: 0;
+  right: 2px;
+  display: inline-block;
+  margin-top: -0.2rem;
+  padding-top: .2rem;
+  content: 'th';
+}
+.leaderboards-list .item-content:first-child .item-title .leaderboards-img {
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+/* =====================================================
+ * Winner Panel
+ * ===================================================*/
+.helper-panel {
+  position: relative;
+  overflow: hidden;
+  width: 92%;
+  margin: 0 auto;
+  padding: .2rem;
+  border: 1px solid #aa9057;
+  border-radius: 10px;
+}
+.helper-header {
+  display: -ms-flexbox;
+  display: flex;
+  box-sizing: border-box;
+  min-height: 1.8rem;
+  padding: 0 .3rem;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.header-inner {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  min-height: 1.8rem;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.helper-title {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-flex-shrink: 1;
+  -ms-flex: 0 1 auto;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+}
+.helper-after {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-right: .3rem;
+  white-space: nowrap;
+  color: #fff;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+.helper-title .name {
+  color: #fff;
+}
+.helper-title .img img {
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.helper-after .leader-title {
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+.helper-after .leader-title span {
+  font-size: 1.4rem;
+  font-weight: 200;
+  color: #aa9057;
+}
+.helper-after .leader-title sup {
+  left: -0.3rem;
+}
+.helper-body {
+  position: relative;
+  margin-top: 10px;
+}
+.helper-tips {
+  font-size: .65rem;
+  line-height: 1rem;
+  position: relative;
+  overflow: hidden;
+  padding: 0 .5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+.helper-tips .text:first-child {
+  float: left;
+}
+.helper-tips .text:last-child {
+  float: right;
+}
+.helper-list {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: .2rem;
+}
+.helper-items {
+  font-size: .65rem;
+  line-height: 1.8rem;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  width: auto;
+  margin-right: .2rem;
+}
+.helper-items img {
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.helper-items .img {
+  display: inline-block;
+  float: left;
+  margin-right: .2rem;
+}
+.helper-items .name {
+  display: inline-block;
+  text-decoration: underline;
+  color: rgba(255, 255, 255, 0.8);
+}
+/*/////////////////////////////*/
+.gradientA {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ab9158+17,ffffff+46,ebc779+58,665634+73,ab9158+100 */
+  background: #ab9158;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ab9158', endColorstr='#ab9158', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+.gradientB {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff2a87+0,d42471+49,b11e60+90 */
+  background: #ff2a87;
+  /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #ff2a87 0%, #d42471 49%, #b11e60 90%);
+  /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #ff2a87 0%, #d42471 49%, #b11e60 90%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #ff2a87 0%, #d42471 49%, #b11e60 90%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2a87', endColorstr='#b11e60', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+.gradientC {
+  background-image: -webkit-linear-gradient(top, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gold-boder {
+  position: relative;
+  z-index: 1;
+  left: -2px;
+  box-sizing: content-box;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 4px;
+  border-radius: 4px 4px 4px 4px;
+  background-color: #000;
+  box-shadow: 3px 5px 11px rgba(0, 0, 0, 0.79);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ab9158+17,ffffff+46,ebc779+58,665634+73,ab9158+100 */
+  background: #ab9158;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ab9158', endColorstr='#ab9158', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+@media (min-width: 310px) and (max-width: 400px) {
+  .gold-boder {
+    width: 300px;
+  }
+}
+@media (min-width: 400px) and (max-width: 767px) {
+  .gold-boder {
+    width: 390px;
+  }
+}
+.gold-boder:before {
+  position: absolute;
+  z-index: 2;
+  top: 4px;
+  left: 4px;
+  width: 100%;
+  height: 100%;
+  content: '';
+  border-radius: 4px 4px 4px 4px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ab9158+17,ffffff+46,ebc779+58,665634+73,ab9158+100 */
+  background: #ab9158;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ab9158', endColorstr='#ab9158', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+.gold-boder:after {
+  position: absolute;
+  z-index: 2;
+  top: 2px;
+  left: 2px;
+  width: 100%;
+  height: 100%;
+  content: '';
+  border-radius: 4px 8px 4px 8px;
+  background-color: #000;
+  box-shadow: 0 0 20px #19418f inset;
+}
+.gold-boder > * {
+  position: relative;
+  z-index: 3;
+  top: 2px;
+  left: 2px;
+}
+.gold-boder .countdown-img {
+  float: left;
+  width: 198px;
+}
+.gold-boder .countdown-cont {
+  width: 100%;
+  margin: 0;
+  margin-top: 36px;
+  padding: 0;
+  text-align: right;
+}
+.activity-countdown .gold-boder {
+  height: 117px;
+  max-height: 300px;
+  margin-top: 6%;
+}
+@media (min-width: 310px) and (max-width: 400px) {
+  .activity-countdown .gold-boder {
+    height: 72px;
+  }
+  .activity-countdown .gold-boder .countdown-img {
+    width: 128px;
+  }
+  .activity-countdown .gold-boder .countdown-cont {
+    margin-top: 27px;
+  }
+}
+@media (min-width: 400px) and (max-width: 767px) {
+  .activity-countdown .gold-boder {
+    height: 93px;
+  }
+  .activity-countdown .gold-boder .countdown-img {
+    width: 164px;
+  }
+  .activity-countdown .gold-boder .countdown-cont {
+    margin-top: 31px;
+  }
+}
+.countdown-cont {
+  font-size: 18px;
+  line-height: 1;
+  color: #fff;
+}
+@media (min-width: 310px) and (max-width: 400px) {
+  .countdown-cont {
+    font-size: 10.5px;
+    line-height: 1;
+  }
+}
+@media (min-width: 400px) and (max-width: 767px) {
+  .countdown-cont {
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+.countdown-cont .day:after {
+  display: block;
+  content: '';
+}
+.countdown-cont em {
+  font-family: 'ledfont';
+  font-size: 1.3em;
+  font-weight: 900;
+  background-image: -webkit-linear-gradient(top, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.countdown-cont .day em {
+  font-size: 2.9em;
+}
+.activation {
+  position: absolute;
+  z-index: 1;
+  bottom: 100px;
+  left: 50%;
+  box-sizing: content-box;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgba(72, 13, 39, 0.63);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff2a87+0,d42471+49,b11e60+90 */
+  background: #ff2a87;
+  /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #ff2a87 0%, #d42471 49%, #b11e60 90%);
+  /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #ff2a87 0%, #d42471 49%, #b11e60 90%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #ff2a87 0%, #d42471 49%, #b11e60 90%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2a87', endColorstr='#b11e60', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+.activation:before,
+.activation:after {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  content: '';
+  border-radius: 50%;
+}
+.activation:before {
+  top: 5px;
+  left: 5px;
+  width: 110px;
+  height: 110px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.23);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ab9158+17,ffffff+46,ebc779+58,665634+73,ab9158+100 */
+  background: #ab9158;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ab9158', endColorstr='#ab9158', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+.activation:after {
+  top: 6px;
+  left: 6px;
+  width: 108px;
+  height: 108px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.23) inset;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff2a87+0,d42471+49,b11e60+90 */
+  background: #ff2a87;
+  /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #ff2a87 0%, #d42471 49%, #b11e60 90%);
+  /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, #ff2a87 0%, #d42471 49%, #b11e60 90%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, #ff2a87 0%, #d42471 49%, #b11e60 90%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff2a87', endColorstr='#b11e60', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+.activation * {
+  position: relative;
+  z-index: 2;
+}
+.activation .btn-link {
+  margin: 0;
+}
+.activation .icon {
+  margin-top: 11px;
+  -webkit-filter: drop-shadow(0px 1px 0px #000000);
+  filter: drop-shadow(0px 1px 0px #000000);
+}
+.activation .btn {
+  font-size: 19px;
+  line-height: 1.2;
+  text-shadow: 0 2px 0 rgba(17, 17, 17, 0.52);
+}
+.activation input[placeholder],
+.activation [placeholder],
+.activation *[placeholder] {
+  color: #fff;
+  text-shadow: none;
+}
+.modal-dialog {
+  width: 100%;
+}
+.activation-body {
+  border: 0;
+}
+.modal {
+  height: 100%;
+}
+.modal .modal-dialog {
+  position: absolute;
+  top: 14%;
+  margin: 0;
+}
+.activation-input {
+  height: auto;
+}
+@media (min-width: 310px) and (max-width: 400px) {
+  .activation-input input {
+    font-size: 16px;
+  }
+}
+@media (min-width: 400px) and (max-width: 767px) {
+  .activation-input input {
+    font-size: 22px;
+  }
+}
+.activation-title,
+.activation-input input {
+  height: auto;
+  margin: 0;
+  padding: 6px 0 3px 0;
+  color: #fff;
+  text-shadow: 0 0 10px #cd236e,0 0 10px #cd236e;
+}
+.activation-footer button {
+  width: 6em;
+  color: #fff;
+  background-color: #c21f60;
+  box-shadow: 0 3px 3px rgba(17, 17, 17, 0.5);
+  text-shadow: 0 1px 0 #111;
+}
+.activation-footer button:hover {
+  color: #fff;
+  text-shadow: 0 3px 3px #111;
+}
+.activation-footer button + button {
+  background-color: #4d4d4d;
+}
+.activity-header {
+  overflow: inherit;
+  text-shadow: 0 2px 2px rgba(17, 17, 17, 0.7);
+}
+.activity-header .user-img img {
+  border: 2px solid #fff;
+  box-shadow: 0 3px 3px rgba(17, 17, 17, 0.5);
+}
+.activity-theme {
+  max-width: 450px;
+  margin: 0 auto;
+}
+.countdown-tips {
+  font-size: 20px;
+  box-sizing: content-box;
+  margin-top: 5px;
+  color: #fff;
+}
+@media (min-width: 310px) and (max-width: 400px) {
+  .countdown-tips {
+    font-size: 16px;
+  }
+}
+@media (min-width: 400px) and (max-width: 767px) {
+  .countdown-tips {
+    font-size: 20px;
+  }
+}
+.countdown-tips .tips-date {
+  font-size: .7em;
+}
+.countdown-tips .tips-date em {
+  font-size: 1.6em;
+  background-image: -webkit-linear-gradient(top, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.mygame {
+  padding: 0;
+  transform-origin: left top;
+  animation-name: mygame;
+  animation-duration: .4s;
+  animation-timing-function: cubic-bezier(0, 0, 0, 1.67);
+  animation-delay: .5s;
+  animation-iteration-count: 1;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+.mygame .icon-mygame {
+  margin-left: 10px;
+  animation-name: mygameicon;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: .3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  -webkit-filter: drop-shadow(0px 3px 5px #000000);
+  filter: drop-shadow(0px 1px 0px #000000);
+}
+@keyframes mygame {
+  0% {
+    transform: translate(0px, -50px) scale(0.5, 0.5);
+    opacity: .5;
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1, 1);
+    opacity: 1;
+  }
+}
+@keyframes mygameicon {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, 15px);
+  }
+}
+.share-tips {
+  position: relative;
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  box-sizing: content-box;
+  width: 240px;
+  height: 50px;
+  margin-left: -120px;
+  color: #fff;
+  border-radius: 50px;
+  background-color: #c21f60;
+  box-shadow: 0 3px 3px rgba(17, 17, 17, 0.5);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ab9158+17,ffffff+46,ebc779+58,665634+73,ab9158+100 */
+  background: #ab9158;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #ab9158 17%, #ffffff 46%, #ebc779 58%, #665634 73%, #ab9158 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ab9158', endColorstr='#ab9158', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+.share-tips * {
+  box-sizing: content-box;
+}
+.share-tips .tips-text {
+  font-size: 14px;
+  line-height: 1.4;
+  width: 12em;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 4px;
+  text-shadow: 0 1px 0 #111;
+}
+.share-tips .tips-text em {
+  max-width: 10em;
+}
+.share-tips .share-img {
+  width: 236px;
+  height: 46px;
+  margin: 2px;
+  border-radius: 46px;
+  background-color: #c21f60;
+  box-shadow: 0 0 6px rgba(17, 17, 17, 0.58) inset;
+}
+.share-tips .share-img img {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 52px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 1px 0 6px rgba(17, 17, 17, 0.76);
+}
+.share-tips .icon-lighton {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 36px;
+  height: 36px;
+  -webkit-filter: drop-shadow(0px 0px 3px #ff5cae);
+  filter: drop-shadow(0px 0px 3px #ff5cae);
+}

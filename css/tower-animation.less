@@ -1,0 +1,387 @@
+ul,
+li,
+ol
+{
+    list-style-type: none;
+}
+
+@textcolor : #fff;
+
+.tower-animation *
+{
+    box-sizing: content-box;
+}
+
+.tower-animation
+{
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    .tower-stage
+    {
+        position: relative;
+        // height: 100%;
+
+        overflow: hidden;
+
+        width: 100%;
+    }
+    .tower-text
+    {
+        font-family: 'ledfont';
+        font-size: 18px;
+        line-height: 1;
+
+        position: absolute;
+        z-index: 2;
+        top: 27%;
+        left: 50%;
+
+        width: 3em;
+        margin-left: -3em / 2;
+
+        transform: skew(0deg, -8deg);
+        text-align: center;
+        white-space: nowrap;
+        // letter-spacing: -4px;
+        text-transform: uppercase;
+
+
+
+        color: #fff;
+        font-weight: 700;
+        span
+        {
+            display: block;
+        }
+    }
+}
+
+.tower-background
+{
+    li
+    {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+
+        display: none;
+        display: block;
+
+        width: 100%;
+        &:first-child
+        {
+            position: relative;
+        }
+    }
+    .tower-bg-lightup,
+    .tower-bg-startop,
+    .tower-bg-stardow
+    {
+        opacity: 0;
+    }
+    .tower-bg-lightup
+    {
+        transition-delay: 1s;
+        transition-timing-function: linear;
+        transition-duration: 2s;
+        transition-property: opacity;
+
+        opacity: 0;
+    }
+    .tower-bg-startop,
+    .tower-bg-stardow
+    {
+        animation-name: tower-bg-star;
+        animation-duration: 2s;
+        animation-play-state: paused;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+
+        opacity: 0;
+    }
+    .tower-bg-startop
+    {
+        animation-delay: 1s;
+    }
+    .tower-bg-stardow
+    {
+        animation-delay: 0s;
+    }
+    @keyframes tower-bg-star
+    {
+        0%
+        {
+            opacity: 0;
+        }
+        90%
+        {
+            opacity: 1;
+        }
+        100%
+        {
+            opacity: 1;
+        }
+    }
+}
+
+.tower-text
+{
+    overflow: hidden;
+    // display: none;
+
+    opacity: 0;
+    .text-effect
+    {
+        position: relative;
+
+        overflow: hidden;
+
+        width: 100%;
+        height: 100%;
+
+        text-align: center;
+    }
+    .textlength
+    {
+        opacity: 0;
+        color: transparent;
+    }
+    p
+    {
+        margin-top: .2em;
+        padding-bottom: 1em;
+    }
+    .top,
+    .light
+    {
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: 0;
+
+        height: 50%;
+    }
+
+    @textshadow: #000;
+
+
+    .top
+    {
+        text-shadow: 
+        0px 0px 3px @textshadow,
+        .5px .5px 0px fade(@textshadow,90%),
+        1px 1px 0px fade(@textshadow,20%),
+        1.5px 1.5px 0 fade(@textshadow,20%),
+        2px 2px 2px rgba(255, 23, 205, 0.5),
+        2.5px 2.5px 4px rgba(255, 23, 205, 0.5),
+        0px 0px 7px rgba(255, 23, 205, 0.5);
+    }
+
+
+    .light
+    {
+        color: transparent;
+        text-shadow: 
+        (1px / 2) (1px / 2) 14px fade(@textcolor,20%),
+		(2px / 2) (2px / 2) 14px fade(@textcolor,20%),
+        (3px / 2) (3px / 2) 14px fade(@textcolor,20%),
+        (4px / 2) (4px / 2) 14px fade(@textcolor,20%),
+        (5px / 2) (5px / 2) 12px fade(@textcolor,20%),
+        (6px / 2) (6px / 2) 10px fade(@textcolor,20%),
+        (7px / 2) (7px / 2) 8px fade(@textcolor,20%),
+        (8px / 2) (8px / 2) 6px fade(@textcolor,20%),
+        (9px / 2) (9px / 2) 4px fade(@textcolor,20%),
+        (10px / 2) (10px / 2) 2px fade(@textcolor,20%),
+        (11px / 2) (11px / 2) 1px fade(@textcolor,20%);
+
+        span
+        {
+            position: relative;
+            top: -5.5px;
+            left: -5.5px;
+        }
+    }
+    .light .text-body,
+    .top .text-body
+    {
+        transition-delay: .1s;
+        transition-timing-function: steps(40);
+        transition-duration: 5s;
+        transition-property: transform;
+        transform: translate(0px,100%);
+
+        animation-name: textscroll;
+        animation-duration: 10s;
+        animation-play-state: paused;
+        animation-timing-function: steps(40+1) ;
+        animation-delay: 5s + 5;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+    }
+    @keyframes textscroll
+    {
+        0%
+        {
+            transform: translate(0px,0%);
+        }
+        50%
+        {
+            transform: translate(0px,-100%);
+        }
+        100%
+        {
+            transform: translate(0px,-100%);
+        }
+    }
+    .light .text-body span
+    {
+        animation-name: textlight;
+        animation-duration: 1s;
+        animation-play-state: paused;
+        animation-timing-function: step-start ;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+
+        opacity: 0;
+    }
+
+
+    .light .text-body span:nth-last-child(3n-1)
+    {
+        animation-delay: .66666s;
+    }
+    .light .text-body span:nth-last-child(3n+0)
+    {
+        animation-delay: .333333s;
+    }
+    .light .text-body span:nth-last-child(3n+1)
+    {
+        animation-delay: 0s;
+    }
+
+
+    @keyframes textlight
+    {
+        0%
+        {
+            opacity: 0;
+        }
+		66%{
+			opacity: 0;
+		}
+
+        100%
+        {
+            opacity: 1;
+        }
+    }
+}
+
+
+//测试控制
+.butdiv
+{
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+
+    width: 100%;
+    height: 2em;
+    button
+    {
+        width: 20%;
+
+        color: #fff;
+        border-radius: 3px;
+        background-color: #ccc;
+    }
+}
+
+
+//动画状态控制；
+
+.animationA
+{
+    .tower-bg-startop,
+    .tower-bg-stardow
+    {
+        animation-play-state: running;
+    }
+    .tower-bg-lightup
+    {
+        opacity: 1;
+    }
+}
+
+.animation-typing
+{
+    .tower-bg-lightup
+    {
+        transition-delay: 0s;
+        transition-duration: 1s;
+
+        opacity: 0;
+    }
+}
+
+
+.animationB
+{
+    .tower-bg-lightup
+    {
+        opacity: 0;
+    }
+    .tower-text
+    {
+        opacity: 1;
+    }
+    .light .text-body span
+    {
+        animation-play-state: running;
+    }
+    .light .text-body,
+    .top .text-body
+    {
+        transform: translate(0px,0%);
+        animation-play-state: running;
+    }
+}
+
+.animationC
+{
+	.tower-bg-startop,
+    .tower-bg-stardow
+    {
+        animation-play-state: running;
+    }
+
+    .tower-bg-lightup
+    {
+        transition-delay: 4s;
+
+        opacity: 1;
+    }
+    .tower-text
+    {
+        opacity: 1;
+    }
+    .light .text-body span
+    {
+        animation-play-state: running;
+    }
+    .light .text-body,
+    .top .text-body
+    {
+        transform: translate(0px,0%);
+        animation-play-state: running;
+    }
+}
